@@ -15,8 +15,10 @@
         ((1700 1900) (kill-user "jin"))
         ((1900 1930) (continue-user "jin"))
 
-        ((1700 1630) (mapcar #'lock-url *url-list*))
+        ((1930 1630) (mapcar #'lock-url *url-list*))
         ((1630 1700) (mapcar #'unlock-url *url-list*))
+        ((1700 1900) (mapcar #'lock-url *url-list*))
+        ((1900 1930) (mapcar #'unlock-url *url-list*))
         ))
 
 (defun main ()
