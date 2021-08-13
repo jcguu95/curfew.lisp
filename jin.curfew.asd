@@ -5,8 +5,7 @@
   :serial t
   :depends-on (:local-time)
   :components ((:file "package")
-               (:file "src/aux")
-               ;; (:file "src/predicate")
+               (:file "src/utils")
                (:file "src/action/kill-app")
                (:file "src/action/kill-user")
                (:file "src/action/slock")

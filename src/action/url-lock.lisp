@@ -1,6 +1,6 @@
 (in-package :jin.curfew)
 
-(setf *dns-path* "/etc/hosts")
+(defvar *dns-path* "/etc/hosts")
 
 (defun lock-url (url)
   "Uncomment the first DECO#URL if any in *DNS-PATH*. Otherwise,
