@@ -20,20 +20,38 @@
   (lambda (x) (not (funcall func x))))
 
 ;; file aux functions
-
 (defun get-file (filename)
   (with-open-file (stream filename)
     (loop for line = (read-line stream nil)
           while line
           collect line)))
 
-;; instruction handling
+;; time predicates
+(defun time-within (t0 t1)
+  "Return a function: time \\mapsto (time \\in [t0,t1])."
+  (lambda (time)
+    (if (<= t0 t1)
+        (<= t0 time t1)
+        (or (<= t0 time)
+            (>= t1 time)))))
 
-(defun within=>do (pair)
-  (unless (eq (length pair) 2)
-    (error "Input should be a list of length 2."))
-  (let ((interval (car pair))
-        (action (car (cdr pair))))
-    (when (funcall (apply #'time-within interval)
-                   (now-in-int))
-      (eval action))))
+(defun hour ()
+  (local-time:timestamp-hour (local-time:now)))
+
+(defun minute ()
+  (local-time:timestamp-hour (local-time:now)))
+
+(defun now ()
+  "Encode current time in a >4-digit integer. For example,
+     08:30am =>  830
+     12:30pm => 1230
+     10:30pm => 2230."
+  (+ (* 100 (hour)) (minute)))
+
+;; ;; instruction handling
+;; (defun within=>do (pair)
+;;   (assert (eq (length pair) 2))
+;;   (let ((interval (car pair))
+;;         (action (car (cdr pair))))
+;;     (when (funcall (apply #'time-within interval) (now))
+;;       (eval action))))
