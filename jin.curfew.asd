@@ -4,7 +4,7 @@
   :version "1.0.0"
   :serial t
   :depends-on (:local-time)
-  :components ((:file "package")
+  :components ((:file "src/package")
                (:file "src/utils")
                (:file "src/action/kill-app")
                (:file "src/action/kill-user")
