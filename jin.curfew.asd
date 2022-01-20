@@ -1,4 +1,4 @@
-#-asdf3.1 (error "ASDF 3.1 or bust!")
+#-asdf3.1 (error "Minimal requirement: ASDF 3.1!")
 (asdf:defsystem :jin.curfew
   :description "Self-control is an illusion."
   :version "1.0.0"
@@ -10,4 +10,12 @@
                (:file "src/action/kill-user")
                (:file "src/action/slock")
                (:file "src/action/url-lock")
-               (:file "src/main")))
+               (:file "src/main"))
+  :build-operation "program-op"
+  :build-pathname "bin/curfew"
+  :entry-point "jin.curfew:main"
+)
+
+#+sb-core-compression
+(defmethod asdf:perform ((o asdf:image-op) (c asdf:system))
+  (uiop:dump-image (asdf:output-file o c) :executable t :compression t))
