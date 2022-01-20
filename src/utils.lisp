@@ -1,6 +1,6 @@
-(in-package :jin.curfew)
+(in-package :curfew)
 
-;; file 
+;; file
 (defun get-file (filename)
   (with-open-file (stream filename)
     (loop for line = (read-line stream nil)

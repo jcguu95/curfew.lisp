@@ -1,4 +1,4 @@
-(in-package :jin.curfew)
+(in-package :curfew)
 
 ;; slock
 (defun slock (user n)
