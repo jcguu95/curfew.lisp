@@ -7,7 +7,8 @@
     (loop (sleep gap)
 
           (ignore-errors
-           (if (or (<= 55 (minute) 59) (<= 25 (minute) 29))
+
+           (if (<= 55 (minute) 59)
                (mapcar #'unlock-url urls)
                (mapcar #'lock-url urls))
 
