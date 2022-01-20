@@ -1,3 +1,3 @@
-(defpackage jin.curfew
+(defpackage curfew
   (:use :cl)
   (:export #:main))

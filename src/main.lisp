@@ -1,4 +1,4 @@
-(in-package :jin.curfew)
+(in-package :curfew)
 
 (defun main ()
   (let ((gap 10)

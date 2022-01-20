@@ -1,5 +1,5 @@
 #-asdf3.1 (error "Minimal requirement: ASDF 3.1!")
-(asdf:defsystem :jin.curfew
+(asdf:defsystem :curfew
   :description "Self-control is an illusion."
   :version "1.0.0"
   :serial t
@@ -13,7 +13,7 @@
                (:file "src/main"))
   :build-operation "program-op"
   :build-pathname "bin/curfew"
-  :entry-point "jin.curfew:main"
+  :entry-point "curfew:main"
 )
 
 #+sb-core-compression

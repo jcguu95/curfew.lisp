@@ -1,5 +1,6 @@
 # Usage
 
++ Customize `main.lisp` as you wish.
 + `make build` to build a standalone executable `./bin/curfew`.
 + Instruct the root to run the executable at boot.
 
