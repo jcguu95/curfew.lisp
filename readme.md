@@ -1,14 +1,11 @@
 ### Usage
 
 + Customize `main.lisp` as you wish.
-+ Ensure `sbcl`. Then`make build` to build a standalone executable `./bin/curfew`.
++ Ensure `sbcl`, `asdf`, and `local-time`.
++ Then`make build` to build a standalone executable `./bin/curfew`.
 + Instruct the root to run the executable at boot.
 
-### Todo
-
-+ Write a tutorial for letting root to run this script automatically at boot.
-
-[TODO: need to test the following tutorial.]
+### Install
 
 After installing the executable `/root/curfew.lisp/bin/curfew`, instruct the
 root to run it at boot. On archlinux, systemd is used for running automatic
@@ -30,7 +27,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 ```
 
-And run `systemctl enable curfew.service`.
+And run `systemctl [enable|start] curfew.service`.
 
 ### Bugs
 
